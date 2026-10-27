@@ -1,0 +1,1 @@
+CREATE POLICY "Public views open future slots" ON public.provider_availability_slots FOR SELECT TO anon USING (is_booked = false AND start_at > now());

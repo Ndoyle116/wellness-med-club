@@ -1,0 +1,130 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Wellness Med Club design system — warm neutrals, elegant editorial */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-cream: var(--cream);
+  --color-sand: var(--sand);
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --font-serif: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-script: "Pinyon Script", "Great Vibes", cursive;
+}
+
+:root {
+  --radius: 0.25rem;
+
+  /* Brand */
+  --background: oklch(0.985 0.005 80);          /* warm off-white */
+  --foreground: oklch(0.22 0.01 60);            /* near-black ink */
+  --ink: oklch(0.18 0.008 60);
+  --cream: oklch(0.965 0.012 80);               /* hero cream */
+  --sand: oklch(0.88 0.025 75);                 /* warm beige accent */
+  --paper: oklch(0.985526 0.005706 84.57);      /* #FCFAF6 image frame */
+
+  --card: oklch(1 0 0);
+  --card-foreground: var(--foreground);
+  --popover: oklch(1 0 0);
+  --popover-foreground: var(--foreground);
+
+  --primary: oklch(0.22 0.01 60);               /* black/ink primary */
+  --primary-foreground: oklch(0.985 0.005 80);
+
+  --secondary: oklch(0.94 0.015 80);
+  --secondary-foreground: var(--foreground);
+
+  --muted: oklch(0.94 0.012 80);
+  --muted-foreground: oklch(0.48 0.012 60);
+
+  --accent: oklch(0.65 0.08 50);                /* warm bronze accent */
+  --accent-foreground: oklch(0.985 0.005 80);
+
+  --destructive: oklch(0.55 0.2 27);
+  --destructive-foreground: oklch(0.985 0.005 80);
+
+  --border: oklch(0.9 0.01 70);
+  --input: oklch(0.9 0.01 70);
+  --ring: oklch(0.65 0.08 50);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+
+  .font-script {
+    font-family: var(--font-script);
+  }
+
+  .eyebrow {
+    font-family: var(--font-sans);
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    font-size: 0.7rem;
+    color: var(--muted-foreground);
+  }
+
+  .divider-script {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--muted-foreground);
+    font-family: var(--font-script);
+    font-size: 1.5rem;
+  }
+  .divider-script::before,
+  .divider-script::after {
+    content: "";
+    width: 3rem;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.4;
+  }
+}

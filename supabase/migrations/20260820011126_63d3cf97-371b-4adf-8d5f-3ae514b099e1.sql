@@ -1,0 +1,1 @@
+DELETE FROM public.provider_availability_slots WHERE is_booked = false;

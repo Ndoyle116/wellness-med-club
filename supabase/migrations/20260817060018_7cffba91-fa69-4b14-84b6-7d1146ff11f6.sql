@@ -1,0 +1,2 @@
+UPDATE public.products SET price_cents = 19000, updated_at = now() WHERE slug = 'lab-female-comprehensive';
+UPDATE public.products SET price_cents = 30000, updated_at = now() WHERE slug = 'lab-female-comprehensive-plus-hormones';
