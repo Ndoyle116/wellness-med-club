@@ -10,6 +10,7 @@ const nav = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
   { to: "/services", label: "Treatment Programs" },
+  { to: "/memberships", label: "Memberships" },
   { to: "/products", label: "Products" },
   { to: "/telehealth", label: "Zoom Call w/ Provider" },
   { to: "/how-it-works", label: "How It Works" },
