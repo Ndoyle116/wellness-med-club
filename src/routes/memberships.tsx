@@ -35,8 +35,8 @@ function MembershipsPage() {
         <div className="mt-12 bg-secondary p-8 md:p-12">
           <h2 className="font-serif text-3xl">Included with every membership</h2>
           <p className="mt-4 text-muted-foreground leading-relaxed">Your secure patient portal lets you communicate with staff, request appointments, and request prescription refills. Members receive 15% off eligible website products and supplements.</p>
-          <h3 className="mt-8 font-serif text-2xl">Optional Primary Care Plus · +$50/month</h3>
-          <p className="mt-3 text-muted-foreground leading-relaxed">Add selected primary care support, telehealth sick visits, medication reviews, and eligible prescription management to any membership.</p>
+          <h3 className="mt-8 font-serif text-2xl">Add Essential Wellness · +$50/month</h3>
+          <p className="mt-3 text-muted-foreground leading-relaxed">Already enrolled in Men's TRT, Women's HRT, or Phentermine Weight Loss? Add Essential Wellness services to your existing membership for an additional $50 per month. This includes eligible chronic medication management, sick visits, up to two telehealth visits per month, and the Essential Wellness follow-up lab schedule. Medications, including GLP-1 medications, are not included in the add-on price unless otherwise specified.</p>
           <p className="mt-5 text-sm text-muted-foreground">Additional or requested bloodwork may have an extra charge. Insurance may be used for eligible labs and prescriptions sent to local pharmacies, subject to your plan. Wellness Med Club does not submit insurance prior authorizations.</p>
         </div>
         <div className="mx-auto mt-16 max-w-3xl">
