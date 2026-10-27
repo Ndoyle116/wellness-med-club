@@ -28,7 +28,7 @@ function MembershipsPage() {
               <ul className="mt-7 space-y-4">
                 {plan.benefits.map((benefit) => <li key={benefit} className="flex items-start gap-3 text-sm leading-relaxed"><CheckCircle2 className="h-5 w-5 shrink-0 text-accent" aria-hidden="true" /><span>{benefit}</span></li>)}
               </ul>
-              <Link to="/contact" className="mt-8 inline-flex items-center gap-2 border-b border-foreground pb-1 text-xs uppercase tracking-[0.18em] hover:text-accent hover:border-accent">Ask about the $199 evaluation <ArrowRight className="h-4 w-4" /></Link>
+              <Link to="/membership-evaluation" className="mt-8 inline-flex items-center gap-2 border-b border-foreground pb-1 text-xs uppercase tracking-[0.18em] hover:text-accent hover:border-accent">Review the $199 evaluation <ArrowRight className="h-4 w-4" /></Link>
             </article>
           ))}
         </div>
@@ -47,7 +47,7 @@ function MembershipsPage() {
             <li><strong className="text-foreground">3. Meet with your clinician.</strong> Complete the required bloodwork before your telehealth visit, to be scheduled within 60 days of purchase. Membership and prescriptions are subject to medical approval.</li>
           </ol>
           <p className="mt-6 text-sm text-muted-foreground">After payment is processed and a lab order has been issued, the evaluation fee is nonrefundable except where required by law. A secure intake, consent, and payment workflow must be completed before online evaluation purchases are enabled.</p>
-          <Link to="/contact" className="mt-8 inline-flex items-center gap-2 bg-ink px-7 py-4 text-xs uppercase tracking-[0.2em] text-primary-foreground hover:bg-accent">Inquire About My $199 Evaluation <ArrowRight className="h-4 w-4" /></Link>
+          <Link to="/membership-evaluation" className="mt-8 inline-flex items-center gap-2 bg-ink px-7 py-4 text-xs uppercase tracking-[0.2em] text-primary-foreground hover:bg-accent">Review My $199 Evaluation <ArrowRight className="h-4 w-4" /></Link>
         </div>
       </section>
     </SiteLayout>
