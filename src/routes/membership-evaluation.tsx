@@ -1,18 +1,20 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { SiteLayout, PageHero } from "@/components/site/SiteLayout";
+import { evaluationProgramLabels, evaluationSelectionSchema } from "@/lib/membership-evaluation";
 
 export const Route = createFileRoute("/membership-evaluation")({
   head: () => ({ meta: [{ title: "Membership Evaluation — Wellness Med Club" }] }),
   component: EvaluationPage,
 });
 
-const programs = ["Men's TRT", "Women's HRT", "Phentermine Weight Loss", "Essential Wellness"];
+const programs = Object.entries(evaluationProgramLabels);
 
 function EvaluationPage() {
   const [program, setProgram] = useState("");
   const [residency, setResidency] = useState("");
   const [acknowledged, setAcknowledged] = useState(false);
+  const selectionValid = evaluationSelectionSchema.safeParse({ program, residency, policyAcknowledged: acknowledged }).success;
   return (
     <SiteLayout>
       <PageHero eyebrow="begin your care" title="$199 Membership Evaluation" subtitle="Review the evaluation process and requirements before beginning your secure medical intake." />
@@ -23,7 +25,7 @@ function EvaluationPage() {
           <label htmlFor="program" className="mt-8 block text-sm font-medium">Membership you're interested in</label>
           <select id="program" value={program} onChange={(event) => setProgram(event.target.value)} className="mt-2 w-full border border-border bg-background p-3">
             <option value="">Select a membership</option>
-            {programs.map((name) => <option key={name} value={name}>{name}</option>)}
+            {programs.map(([value, name]) => <option key={value} value={value}>{name}</option>)}
           </select>
           <label htmlFor="residency" className="mt-6 block text-sm font-medium">State of residence</label>
           <select id="residency" value={residency} onChange={(event) => setResidency(event.target.value)} className="mt-2 w-full border border-border bg-background p-3">
@@ -45,7 +47,7 @@ function EvaluationPage() {
           </label>
           <div className="mt-8 border-t border-border pt-6">
             <p className="text-sm text-muted-foreground">Online medical intake, electronic signature, and payment are being securely configured. This preview does not collect or save medical information and cannot accept payment.</p>
-            <Link to="/contact" className={`mt-5 inline-flex bg-ink px-6 py-4 text-xs uppercase tracking-[0.16em] text-primary-foreground hover:bg-accent ${!program || !["FL", "NV"].includes(residency) || !acknowledged ? "pointer-events-none opacity-40" : ""}`} aria-disabled={!program || !["FL", "NV"].includes(residency) || !acknowledged}>Contact us about my evaluation</Link>
+            <Link to="/contact" className={`mt-5 inline-flex bg-ink px-6 py-4 text-xs uppercase tracking-[0.16em] text-primary-foreground hover:bg-accent ${!selectionValid ? "pointer-events-none opacity-40" : ""}`} aria-disabled={!program || !["FL", "NV"].includes(residency) || !acknowledged}>Contact us about my evaluation</Link>
           </div>
         </div>
       </section>
