@@ -11,7 +11,7 @@ const plans = [
   { name: "Men's TRT", price: "$125", benefits: ["Injectable testosterone when clinically appropriate", "Included routine monitoring bloodwork", "Ongoing clinician-guided follow-up"] },
   { name: "Women's HRT", price: "$179", benefits: ["Eligible prescribed hormone medications", "Included routine monitoring bloodwork", "Individualized hormone care and follow-up"] },
   { name: "Phentermine Weight Loss", price: "$119", benefits: ["Phentermine medication when medically appropriate", "Included routine monitoring bloodwork", "Optional topiramate add-on: +$30/month ($149 total)"] },
-  { name: "Essential Wellness", price: "$89", benefits: ["Medication management for GLP-1 therapy, blood pressure, thyroid, cholesterol and other chronic conditions", "GLP-1 medications are not included in the membership price", "Sick visits and up to two telehealth visits per month", "Six-month follow-up lab panel and annual comprehensive lab panel"] },
+  { name: "Essential Wellness", price: "$89", benefits: ["Medication management for GLP-1 therapy, blood pressure, thyroid, cholesterol and other chronic conditions", "GLP-1 medications are not included in the membership price", "Sick visits and up to two telehealth visits per month", "Six-month follow-up lab panel and annual comprehensive lab panel", "15% off eligible website products and supplements, plus 15% off eligible self-pay website lab work", "Lab orders may be sent to Quest Diagnostics for insurance billing when applicable; patients are responsible for any uncovered charges", "Prescriptions may be sent to a local pharmacy when clinically appropriate, allowing patients to use insurance subject to coverage"] },
 ];
 
 function MembershipsPage() {
