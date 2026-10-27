@@ -17,10 +17,10 @@ function EvaluationPage() {
   const selectionValid = evaluationSelectionSchema.safeParse({ program, residency, policyAcknowledged: acknowledged }).success;
   return (
     <SiteLayout>
-      <PageHero eyebrow="begin your care" title="$199 Membership Evaluation" subtitle="Review the evaluation process and requirements before beginning your secure medical intake." />
+      <PageHero eyebrow="begin your care" title="$199 Membership Evaluation" subtitle="First select your membership and confirm eligibility. Secure registration and acknowledgments come before the $199 payment." />
       <section className="mx-auto max-w-3xl px-6 py-16">
         <div className="bg-secondary p-7 md:p-10">
-          <h2 className="font-serif text-3xl">Evaluation overview</h2>
+          <h2 className="font-serif text-3xl">Step 1: Choose your membership</h2>
           <p className="mt-4 text-muted-foreground">The one-time $199 evaluation includes comprehensive baseline bloodwork and a telehealth consultation. It does not guarantee acceptance into a membership or a prescription.</p>
           <label htmlFor="program" className="mt-8 block text-sm font-medium">Membership you're interested in</label>
           <select id="program" value={program} onChange={(event) => setProgram(event.target.value)} className="mt-2 w-full border border-border bg-background p-3">
@@ -46,7 +46,9 @@ function EvaluationPage() {
             <span>I understand the evaluation, lab scheduling, eligibility, and refund information above.</span>
           </label>
           <div className="mt-8 border-t border-border pt-6">
-            <p className="text-sm text-muted-foreground">Online medical intake, electronic signature, and payment are being securely configured. This preview does not collect or save medical information and cannot accept payment.</p>
+            <h3 className="font-serif text-2xl">What happens next</h3>
+            <ol className="mt-3 space-y-2 text-sm text-muted-foreground"><li>2. Complete secure registration and required evaluation acknowledgments.</li><li>3. Pay the one-time $199 evaluation fee through secure Stripe checkout.</li><li>4. Receive SimplePractice intake forms and Quest lab instructions.</li><li>5. Complete bloodwork and your telehealth evaluation before any membership enrollment.</li></ol>
+            <p className="text-sm text-muted-foreground">Secure registration, required acknowledgments, and Stripe payment are not yet connected. This preview does not collect or save patient information and cannot accept payment.</p>
             <Link to="/contact" className={`mt-5 inline-flex bg-ink px-6 py-4 text-xs uppercase tracking-[0.16em] text-primary-foreground hover:bg-accent ${!selectionValid ? "pointer-events-none opacity-40" : ""}`} aria-disabled={!program || !["FL", "NV"].includes(residency) || !acknowledged}>Contact us about my evaluation</Link>
           </div>
         </div>
